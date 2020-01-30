@@ -10,27 +10,29 @@ import PercentageAdded from '../../components/Select/percentageAdded';
 
 type Props = ReturnType<typeof mapState> & ReturnType<typeof mapDispatch>;
 
-class Books extends React.Component<Props> {
+class Chapters extends React.Component<Props> {
   onChange = (selectedOption: any) => {
-    this.props.setSelectedBook(selectedOption);
-
-    this.props.setSelectedChapter(undefined);
-    this.props.setChapters([]);
+    this.props.setSelectedChapter(selectedOption);
 
     this.props.setSelectedVerse(undefined);
     this.props.setVerses([]);
 
-    this.props.getChaptersThunk();
+    this.props.getVersesThunk();
   };
 
   render = () => {
-    const { loadingBooks, books, selectedBook } = this.props;
+    const {
+      loadingChapters,
+      chapters,
+      selectedBook,
+      selectedChapter,
+    } = this.props;
 
-    const items: IOptionData[] = (books || []).map(item => {
+    const items: IOptionData[] = (chapters || []).map(item => {
       return {
         value: item.name,
         label: {
-          left: item.name,
+          left: `Chapter ${item.name}`,
           right: <PercentageAdded {...item} />,
         },
         isDisabled: item.percentageAdded === 100,
@@ -41,17 +43,17 @@ class Books extends React.Component<Props> {
       <Wrapper>
         <Select
           items={items}
-          loading={loadingBooks}
+          loading={loadingChapters}
           disabled={
-            loadingBooks ||
-            !books ||
-            !Array.isArray(books) ||
-            books.length === 0
+            loadingChapters ||
+            !selectedBook ||
+            !chapters ||
+            !Array.isArray(chapters) ||
+            chapters.length === 0
           }
-          placeholder="Pick a book"
+          placeholder="Pick a chapter"
           onChange={this.onChange}
-          value={selectedBook}
-          searchable
+          value={selectedChapter}
         />
       </Wrapper>
     );
@@ -60,9 +62,10 @@ class Books extends React.Component<Props> {
 
 function mapState(state: IRootState) {
   return {
-    books: state.bible.books,
-    loadingBooks: state.bible.loadingBooks,
+    chapters: state.bible.chapters,
+    loadingChapters: state.bible.loadingChapters,
     selectedBook: state.bible.selectedBook,
+    selectedChapter: state.bible.selectedChapter,
   };
 }
 
@@ -70,7 +73,7 @@ function mapDispatch(dispatch: Dispatch) {
   return bindActionCreators(Creators, dispatch);
 }
 
-export default connect(mapState, mapDispatch)(Books);
+export default connect(mapState, mapDispatch)(Chapters);
 
 const Wrapper = styled.div`
   height: 100%;

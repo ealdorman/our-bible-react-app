@@ -1,6 +1,6 @@
 {
   "name": "our-bible-react-app",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "start": "REACT_APP_NODE_ENV=prod react-scripts start",
@@ -26,8 +26,15 @@
     ]
   },
   "dependencies": {
+    "@blueprintjs/core": "^3.23.1",
+    "@fortawesome/fontawesome-svg-core": "^1.2.26",
+    "@fortawesome/free-brands-svg-icons": "^5.12.0",
+    "@fortawesome/free-regular-svg-icons": "^5.12.0",
+    "@fortawesome/free-solid-svg-icons": "^5.12.0",
+    "@fortawesome/react-fontawesome": "^0.1.8",
     "bootstrap": "^4.4.1",
     "connected-react-router": "^6.6.1",
+    "element-resize-detector": "^1.2.1",
     "history": "^4.10.1",
     "jquery": "^3.4.1",
     "react": "^16.12.0",
@@ -42,12 +49,14 @@
     "reduxsauce": "^1.1.1",
     "styled-components": "^5.0.0",
     "superagent": "^5.2.1",
-    "typescript": "~3.7.2"
+    "typescript": "~3.7.2",
+    "web3": "^1.2.5"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
+    "@types/element-resize-detector": "^1.1.2",
     "@types/history": "^4.7.4",
     "@types/jest": "^24.9.0",
     "@types/node": "^12.12.25",

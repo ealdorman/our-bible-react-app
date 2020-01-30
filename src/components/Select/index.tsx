@@ -21,12 +21,18 @@ export interface IOptionData {
     left: string | React.ReactNode;
     right: string | React.ReactNode;
   };
+  text?: string;
+  isDisabled: boolean;
 }
 
 interface IIncomingProps {
   items: IOptionData[];
   loading: boolean;
   disabled: boolean;
+  placeholder: string;
+  onChange: (selectedOption: any) => void;
+  value?: IOptionData;
+  searchable?: boolean;
 }
 
 type Props = IIncomingProps;
@@ -34,7 +40,7 @@ type Props = IIncomingProps;
 class SelectComp extends React.Component<Props> {
   render() {
     const Option = (props: ISelectOption) => (
-      <components.Option {...props}>
+      <components.Option {...props} isDisabled={props.isDisabled}>
         <Item {...props} />
       </components.Option>
     );
@@ -51,6 +57,10 @@ class SelectComp extends React.Component<Props> {
         options={this.props.items}
         isLoading={this.props.loading}
         isDisabled={this.props.disabled}
+        placeholder={this.props.placeholder}
+        onChange={this.props.onChange}
+        value={this.props.value || null}
+        isSearchable={this.props.searchable || false}
       />
     );
   }
