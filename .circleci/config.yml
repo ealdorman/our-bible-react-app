@@ -31,7 +31,7 @@ jobs:
           profile-name: default
       - run:
           name: Upload file to S3
-          command: aws s3 sync ./build s3://ourbible.io --delete
+          command: aws s3 sync ./build s3://ourbible.io --acl public-read --delete
       - run:
           name: Set Cloudfront preivew to true
           command: aws configure set preview.cloudfront true
