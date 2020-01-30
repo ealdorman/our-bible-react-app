@@ -33,6 +33,9 @@ jobs:
           name: Upload file to S3
           command: aws s3 sync ./build s3://ourbible.io --delete
       - run:
+          name: Set Cloudfront preivew to true
+          command: aws configure set preview.cloudfront true
+      - run:
           name: Invalidate Cloudfront
           command: aws cloudfront create-invalidation --distribution-id EI9CDNUORQ4U3 --paths "/*"
 
