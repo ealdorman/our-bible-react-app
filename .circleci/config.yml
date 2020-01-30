@@ -31,7 +31,7 @@ jobs:
           profile-name: default
       - run:
           name: Upload file to S3
-          command: aws s3 sync ./ s3://ourbible.io --delete
+          command: aws s3 sync ./build s3://ourbible.io --delete
       - run:
           name: Invalidate Cloudfront
           command: aws cloudfront create-invalidation --distribution-id EI9CDNUORQ4U3 --paths "/*"
