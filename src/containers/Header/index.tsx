@@ -15,7 +15,7 @@ class Header extends React.Component {
 
         <SiteName>Our Bible</SiteName>
 
-        <Tagline>Preserving the bible with blockchain</Tagline>
+        <Tagline>Preserving the Bible with blockchain</Tagline>
       </Wrapper>
     );
   }
