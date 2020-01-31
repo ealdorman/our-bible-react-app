@@ -46,12 +46,16 @@ class Footer extends React.Component<Props, IState> {
             <OverlayLink onClick={() => this.props.setShowAbout(true)}>
               About
             </OverlayLink>
+
+            <OverlayLink onClick={() => this.props.setShowHowThisWorks(true)}>
+              How this works
+            </OverlayLink>
           </OverlayLinks>
         </ContentWrapper>
 
         {this.state.footerHeight && (
           <WaveWrapper>
-            <svg xmlns="http://www.w3.org/2000/svg" height={this.state.footerHeight + 50} width="100%" preserveAspectRatio="none" viewBox="0 0 1440 320">
+            <svg xmlns="http://www.w3.org/2000/svg" height={this.state.footerHeight + 70} width="100%" preserveAspectRatio="none" viewBox="0 0 1440 320">
               <defs>
                 <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" style={{ stopColor: '#F6BB33', stopOpacity: 1 }} />
@@ -92,7 +96,7 @@ const Company = styled.div``;
 
 const CompanyLink = styled.a`
   text-decoration: none;
-  color: #182026;
+  color: #4a4a4a;
 
   &:hover {
     color: #182026;
@@ -103,13 +107,14 @@ const OverlayLinks = styled.div`
   padding-top: 12px;
 `;
 
-const OverlayLink = styled.span`
+const OverlayLink = styled.div`
   text-decoration: underline;
-  color: #182026;
+  color: #4a4a4a;
   cursor: pointer;
+  padding-top: 15px;
 
   &:hover {
-    color: #182026;
+    color: #4a4a4a;
   }
 `;
 

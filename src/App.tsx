@@ -14,6 +14,7 @@ import HeaderAndContent from './containers/HeaderAndContent';
 import Home from './containers/Home';
 import Footer from './containers/Footer';
 import OverlayAbout from './containers/OverlayAbout';
+import OverlayHowThisWorks from './containers/OverlayHowThisWorks';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'normalize.css/normalize.css';
@@ -35,6 +36,8 @@ class App extends React.Component<Props> {
         <GlobalStyle />
 
         <OverlayAbout />
+
+        <OverlayHowThisWorks />
 
         <HeaderAndContent>
           <Switch>

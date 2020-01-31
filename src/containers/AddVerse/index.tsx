@@ -111,7 +111,7 @@ class AddVerse extends React.Component<Props, IState> {
         message: 'The verse has been added to the ETH blockchain!',
         intent: Intent.SUCCESS,
         action: {
-          href: `https://twitter.com/intent/tweet?text=I%20just%20added%20a%20bible%20verse%20to%20the%20%23Ethereum%20blockchain%20at%20ourbible.io%21%0A%0A${encodeURIComponent(
+          href: `https://twitter.com/intent/tweet?text=I%20just%20preserved%20a%20Bible%20verse%20on%20the%20%23Ethereum%20blockchain%20at%20ourbible.io%21%0A%0A${encodeURIComponent(
             `${selectedBook.value} ${selectedChapter.value}:${selectedVerse.value} -- ${selectedVerse.text}`
           )}`,
           target: '_blank',
