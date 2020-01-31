@@ -13,13 +13,56 @@ class OverlayHowThisWorks extends React.Component<Props> {
     const body = (
       <div>
         <OverlayParagraph>
-          This site interacts with a <a href="https://github.com/ealdorman/our-bible-contracts" target="_blank" rel="noopener noreferrer">smart contract</a> on the Ethereum blockchain to add verses from the Bible to the blockchain. 
+          This site interacts with a{' '}
+          <a
+            href="https://github.com/ealdorman/our-bible-contracts"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            smart contract
+          </a>{' '}
+          on the Ethereum blockchain to add verses from the Bible to the
+          blockchain.
         </OverlayParagraph>
         <OverlayParagraph>
-          That smart contract includes an <a href="https://provable.xyz/" target="_blank" rel="noopener noreferrer">oracle</a> that pulls KJV Bible verses from the Our Bible API. Once the oracle retrieves a verse, it sends the verse back to the smart contract where the verse is preserved on the blockchain.
+          That smart contract includes an{' '}
+          <a
+            href="https://provable.xyz/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            oracle
+          </a>{' '}
+          that pulls KJV Bible verses from the Our Bible API. Once the oracle
+          retrieves a verse, it sends the verse back to the smart contract where
+          the verse is preserved on the blockchain.
         </OverlayParagraph>
         <OverlayParagraph>
-          All of Our Bible is open source! Take a look at how the <a href="https://github.com/ealdorman/our-bible-react-app" target="_blank" rel="noopener noreferrer">site</a>, <a href="https://github.com/ealdorman/our-bible-api" target="_blank" rel="noopener noreferrer">API</a>, and <a href="https://github.com/ealdorman/our-bible-contracts" target="_blank" rel="noopener noreferrer">smart contract</a> work for yourself.
+          All of Our Bible is open source! Take a look and contribute to the{' '}
+          <a
+            href="https://github.com/ealdorman/our-bible-react-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            site
+          </a>
+          ,{' '}
+          <a
+            href="https://github.com/ealdorman/our-bible-api"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            API
+          </a>{' '}
+          and{' '}
+          <a
+            href="https://github.com/ealdorman/our-bible-contracts"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            smart contract
+          </a>
+          .
         </OverlayParagraph>
       </div>
     );
