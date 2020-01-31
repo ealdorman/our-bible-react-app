@@ -2,18 +2,47 @@ import React from 'react';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
+import { Intent } from '@blueprintjs/core';
 
 import Select, { IOptionData } from '../../components/Select';
 import { Creators } from '../../redux/actions';
 import { IRootState } from '../../redux/reducers';
-import { verseWasPreserved } from '../../utils';
+import { AppToaster } from '../../components/AppToaster';
+import { verseWasPreserved, showNeedsMetaMaskToast } from '../../utils';
 
 type Props = ReturnType<typeof mapState> & ReturnType<typeof mapDispatch>;
 
 class Verses extends React.Component<Props> {
-  onChange = (selectedOption: any) => {
+  onChange = async (selectedOption: any) => {
     this.props.setSelectedVerse(selectedOption);
+
+    this.connectToWallet()
   };
+
+  connectToWallet = async () => {
+    if (!window.ethereum) {
+      showNeedsMetaMaskToast();
+
+      return;
+    }
+
+    try {
+      const enabled = await window.ethereum.enable();
+
+      if (!enabled || !Array.isArray(enabled) || enabled.length === 0) {
+        showNeedsMetaMaskToast();
+      }
+    } catch (_) {
+      AppToaster.show({
+        message: "This dapp must connect to your wallet to preserve a verse.",
+        intent: Intent.DANGER,
+        action: {
+          onClick: () => this.connectToWallet(),
+          text: <strong>Connect</strong>,
+        },
+      });
+    }
+  }
 
   render = () => {
     const {
