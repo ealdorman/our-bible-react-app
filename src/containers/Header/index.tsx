@@ -7,7 +7,7 @@ class Header extends React.Component {
     return (
       <Wrapper>
         <GithubIcon
-          href="https://github.com/ealdorman/our-bible-react-app"
+          href="https://github.com/ealdorman/our-bible"
           target="_blank"
         >
           <FontAwesomeIcon icon={['fab', 'github']} />
