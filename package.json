@@ -1,6 +1,6 @@
 {
   "name": "our-bible-react-app",
-  "version": "0.0.2",
+  "version": "0.1.0",
   "private": true,
   "scripts": {
     "start": "REACT_APP_NODE_ENV=prod react-scripts start",

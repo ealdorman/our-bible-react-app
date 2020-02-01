@@ -1,7 +1,6 @@
 import React from 'react';
 import { bindActionCreators, Dispatch } from 'redux';
 import { connect } from 'react-redux';
-// import { Row, Col, Input } from 'reactstrap';
 import styled from 'styled-components';
 
 import { Creators } from '../../redux/actions';

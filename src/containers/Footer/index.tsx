@@ -50,12 +50,16 @@ class Footer extends React.Component<Props, IState> {
             <OverlayLink onClick={() => this.props.setShowHowThisWorks(true)}>
               How this works
             </OverlayLink>
+
+            <OverlayLink onClick={() => this.props.setShowDidYouKnow(true)}>
+              Did you know?
+            </OverlayLink>
           </OverlayLinks>
         </ContentWrapper>
 
         {this.state.footerHeight && (
           <WaveWrapper>
-            <svg xmlns="http://www.w3.org/2000/svg" height={this.state.footerHeight + 70} width="100%" preserveAspectRatio="none" viewBox="0 0 1440 320">
+            <svg xmlns="http://www.w3.org/2000/svg" height={this.state.footerHeight + 85} width="100%" preserveAspectRatio="none" viewBox="0 0 1440 320">
               <defs>
                 <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
                   <stop offset="0%" style={{ stopColor: '#F6BB33', stopOpacity: 1 }} />
