@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 
 import { Creators } from '../../redux/actions';
 import logo from '../../images/ealdorman_logo.svg';
+import AllVersesProgress from '../AllVersesProgress';
 
 interface IState {
   footerHeight?: number;
@@ -24,7 +25,11 @@ class Footer extends React.Component<Props, IState> {
   }
 
   componentDidMount() {
-    if (!this.footerWrapper || !this.footerWrapper.current || !this.footerWrapper.current.offsetHeight) {
+    if (
+      !this.footerWrapper ||
+      !this.footerWrapper.current ||
+      !this.footerWrapper.current.offsetHeight
+    ) {
       return;
     }
 
@@ -54,19 +59,37 @@ class Footer extends React.Component<Props, IState> {
             <OverlayLink onClick={() => this.props.setShowDidYouKnow(true)}>
               Did you know?
             </OverlayLink>
+
+            <AllVersesProgress />
           </OverlayLinks>
         </ContentWrapper>
 
         {this.state.footerHeight && (
           <WaveWrapper>
-            <svg xmlns="http://www.w3.org/2000/svg" height={this.state.footerHeight + 85} width="100%" preserveAspectRatio="none" viewBox="0 0 1440 320">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              height={this.state.footerHeight + 110}
+              width="100%"
+              preserveAspectRatio="none"
+              viewBox="0 0 1440 320"
+            >
               <defs>
                 <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="0%">
-                  <stop offset="0%" style={{ stopColor: '#F6BB33', stopOpacity: 1 }} />
-                  <stop offset="100%" style={{ stopColor: '#72B95D', stopOpacity: 1 }} />
+                  <stop
+                    offset="0%"
+                    style={{ stopColor: '#F6BB33', stopOpacity: 1 }}
+                  />
+                  <stop
+                    offset="100%"
+                    style={{ stopColor: '#72B95D', stopOpacity: 1 }}
+                  />
                 </linearGradient>
               </defs>
-              <path fill="url(#grad1)" fillOpacity="1" d="M0,96L80,96C160,96,320,96,480,117.3C640,139,800,181,960,197.3C1120,213,1280,203,1360,197.3L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+              <path
+                fill="url(#grad1)"
+                fillOpacity="1"
+                d="M0,96L80,96C160,96,320,96,480,117.3C640,139,800,181,960,197.3C1120,213,1280,203,1360,197.3L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"
+              ></path>
             </svg>
           </WaveWrapper>
         )}
@@ -89,11 +112,12 @@ const Wrapper = styled.div`
   display: flex;
   align-items: center;
   background-color: #fcfcfc;
-  position: relative
+  position: relative;
 `;
 
 const ContentWrapper = styled.div`
   z-index: 900;
+  color: #4a4a4a;
 `;
 
 const Company = styled.div``;

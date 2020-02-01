@@ -13,13 +13,13 @@ class OverlayDidYouKnow extends React.Component<Props> {
     const body = (
       <div>
         <OverlayParagraph>
-          You don't have to come to this website to add a Bible verse to the Ethereum blockchain. You can simply send at least 0.015 ETH to:
+          You don't have to come to this website to preserve a Bible verse on
+          the Ethereum blockchain. You can simply send at least 0.015 ETH to:
         </OverlayParagraph>
+        <OverlayParagraph>ourbible.eth</OverlayParagraph>
         <OverlayParagraph>
-          ourbible.eth
-        </OverlayParagraph>
-        <OverlayParagraph>
-          By sending 0.015 ETH to ourbible.eth, a randomly selected Bible verse will be added to the Ethereum blockchain.
+          By sending 0.015 ETH to ourbible.eth, a randomly selected Bible verse
+          will be preserved on the Ethereum blockchain.
         </OverlayParagraph>
       </div>
     );
