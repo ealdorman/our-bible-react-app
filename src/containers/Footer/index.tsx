@@ -43,7 +43,7 @@ class Footer extends React.Component<Props, IState> {
           <Company>
             <Logo src={logo} alt="Ealdorman logo" />
             <CompanyLink href="https://ealdorman.com" target="_blank">
-              Ealdorman, Inc.
+              Ealdorman
             </CompanyLink>
           </Company>
 
@@ -68,7 +68,7 @@ class Footer extends React.Component<Props, IState> {
           <WaveWrapper>
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              height={this.state.footerHeight + 110}
+              height={this.state.footerHeight + 114}
               width="100%"
               preserveAspectRatio="none"
               viewBox="0 0 1440 320"
@@ -108,7 +108,7 @@ const Wrapper = styled.div`
   padding-left: 25px;
   padding-right: 10px;
   padding-top: 35px;
-  padding-bottom: 55px;
+  padding-bottom: 40px;
   display: flex;
   align-items: center;
   background-color: #fcfcfc;

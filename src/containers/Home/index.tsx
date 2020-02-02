@@ -18,7 +18,7 @@ class Home extends React.Component<Props> {
       <Wrapper>
         <InputWrapper>
           <p className="lead">
-            Pick a Bible verse to preserve it on the Ethereum blockchain.
+            Pick a Bible verse to preserve on the Ethereum blockchain.
           </p>
           <Books />
 
