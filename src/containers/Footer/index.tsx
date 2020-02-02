@@ -57,7 +57,7 @@ class Footer extends React.Component<Props, IState> {
             </OverlayLink>
 
             <OverlayLink onClick={() => this.props.setShowDidYouKnow(true)}>
-              Did you know?
+              Did you know
             </OverlayLink>
 
             <AllVersesProgress />

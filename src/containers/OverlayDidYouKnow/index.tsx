@@ -27,7 +27,7 @@ class OverlayDidYouKnow extends React.Component<Props> {
     return (
       <Overlay
         show={this.props.showDidYouKnow}
-        title="Did you know?"
+        title="Did you know"
         body={body}
         onClose={() => this.props.setShowDidYouKnow(false)}
       />
